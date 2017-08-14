@@ -1,0 +1,9 @@
+.vehicle-details {
+  list-style: none;
+  padding: 0px;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: gray;
+}

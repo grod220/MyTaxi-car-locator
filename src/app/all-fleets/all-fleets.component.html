@@ -1,0 +1,61 @@
+<div class="row">
+  <div *ngIf="fleetData.taxis" class="col-md-6">
+    <h4>Taxis</h4>
+    <hr>
+    <div *ngFor="let taxi of fleetData.taxis">
+      <p>
+        <a data-toggle="collapse" [attr.href]="'#' + 'ID' + taxi.id" aria-expanded="false">
+          {{ taxi.id }}
+        </a>
+      </p>
+      <div class="collapse" [attr.id]="'ID' + taxi.id">
+        <div class="card card-block">
+          <ul class="vehicle-details">
+            <li><span class="detail-label">State</span>: {{ taxi.state }}</li>
+            <li><span class="detail-label">Type</span>: {{ taxi.type }}</li>
+            <li><span class="detail-label">Coordinates</span>:</li>
+            <ul>
+              <li><span class="detail-label">latitude: </span>
+                {{ taxi.coordinate.latitude }}
+              </li>
+              <li><span class="detail-label">longitude: </span>
+                {{ taxi.coordinate.longitude }}
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="fleetData.car2go" class="col-md-6">
+    <h4>Car2Go</h4>
+    <hr>
+    <div *ngFor="let car2go of fleetData.car2go">
+      <p>
+        <a data-toggle="collapse" [attr.href]="'#' + 'ID' + car2go.id" aria-expanded="false">
+          {{ car2go.name }}
+        </a>
+      </p>
+      <div class="collapse" [attr.id]="'ID' + car2go.id">
+        <div class="card card-block">
+          <ul class="vehicle-details">
+            <li><span class="detail-label">Address</span>: {{ car2go.address }}</li>
+            <li><span class="detail-label">Engine Type</span>: {{ car2go.engineType }}</li>
+            <li><span class="detail-label">Fuel</span>: {{ car2go.fuel }}</li>
+            <li><span class="detail-label">Interior</span>: {{ car2go.interior }}</li>
+            <li><span class="detail-label">Vin</span>: {{ car2go.vin }}</li>
+            <li><span class="detail-label">Coordinates</span>:</li>
+            <ul>
+              <li><span class="detail-label">latitude: </span>
+                {{ car2go.coordinates[1] }}
+              </li>
+              <li><span class="detail-label">longitude: </span>
+                {{ car2go.coordinates[0] }}
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
