@@ -1,5 +1,11 @@
 <div class="container col-md-8 col-md-offset-2">
-  <logo></logo>
-  <fleet-map *ngIf="fleetData.car2go && fleetData.taxis" [fleetData]="fleetData"></fleet-map>
-  <all-fleets [fleetData]="fleetData"></all-fleets>
+  <app-logo></app-logo>
+  <app-fleet-map *ngIf="fleetData.car2go && fleetData.taxis"
+                 [fleetData]="fleetData"
+                 [showTaxis]="showTaxis"
+                 [showCars]="showCars"></app-fleet-map>
+  <app-all-fleets [fleetData]="fleetData"
+                  [showTaxis]="showTaxis"
+                  [showCars]="showCars"
+                  (toggleMarkers)="handleToggleMarkers($event)"></app-all-fleets>
 </div>

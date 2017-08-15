@@ -7,3 +7,11 @@
   font-weight: bold;
   color: gray;
 }
+
+h4 {
+  display: inline;
+}
+
+button {
+  float: right;
+}
